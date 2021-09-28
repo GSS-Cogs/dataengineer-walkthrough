@@ -117,4 +117,4 @@ The differences below are made using `git diff --no-index` between `info.json` a
 ```
 
 ### Differences in the output
-Using the associated `.devcontainer.json` (or the docker container `gsscogs/databaker:test`) try running both pipelines and check the output. For less code and slightly more `info.json` keys, we now have a defined catalog mentry, a local codelist (which generates both value/label pairs because the dataframe wasn't patified), and virtual columns.
+Using the associated `.devcontainer.json` (or the docker container `gsscogs/databaker:test`) try running both pipelines and check the output. For less code and slightly more `info.json` keys, we now have a defined catalog entry, a local codelist (which generates both value/label pairs because the dataframe wasn't patified), and virtual columns.
