@@ -1,37 +1,21 @@
 # csvwlib-flavoured transforms
-This only so far covers how to convert existing `gss-utils` transformations to
-new-style csvwlib transforms.
+This only so far covers how to convert existing `gss-utils` transformations to new-style csvwlib transforms.
 
 ## Example 1 - Single-measure dataset with virtual measure/units
-The `DEFRA-B5-Water-bodies-achieving-sustainable-abstraction-criteria` dataset
-has been converted to the new csvwlib-flavoured methods for CSV-W generation.
-These changes involve adopting new conventions regarding the naming of files and
-how to mange the transform. The generation of the csv-w exists outside of the
-transform python file for now.
+The `DEFRA-B5-Water-bodies-achieving-sustainable-abstraction-criteria` dataset has been converted to the new csvwlib-flavoured methods for CSV-W generation. These changes involve adopting new conventions regarding the naming of files and how to mange the transform. The generation of the csv-w exists outside of the transform python file for now.
 
-The dataset is a basic csv file comprised of a known character encoding and
-three columns.
+The dataset is a basic csv file comprised of a known character encoding and three columns.
 
 1. One existing dimension (i.e. `Year` is subPropertyOf `refPeriod`)
 2. New dimension `Water body category` needs a codelist
 3. Observations are tied to existing units and measures
 
-The original transform pathified the contents of the dataset and used the
-`cubes()` class to output the transformed dataset and associated files. The new
-method skips initialising the cube class and instead uses the `CatalogMetadata`
-to capture attributes of the dataset not configured within the original
-`info.json`. The `CatalogMetadata` is output as `datasetname-metadata.json` to
-match the `datasetname-main.py` and `dataset-info.json` files. Additionally, the
-`dataset-observations.csv` is output without the transforms.
+The original transform pathified the contents of the dataset and used the `cubes()` class to output the transformed dataset and associated files. The new method skips initialising the cube class and instead uses the `CatalogMetadata` to capture attributes of the dataset not configured within the original `info.json`. The `CatalogMetadata` is output as `datasetname-metadata.json` to match the `datasetname-main.py` and `dataset-info.json` files. Additionally, the `dataset-observations.csv` is output without the transforms.
 
-This new method, with updates to the `info.json` in the new `v1.1` release
-gives data engineers quick new ways to declare dataset-local dimensions with
-code lists. Including a reference to the `$schema` at the start of an `info.json`
-provides schema validation in both Visual Studio Code and PyCharm.
+This new method, with updates to the `info.json` in the new `v1.1` release gives data engineers quick new ways to declare dataset-local dimensions with code lists. Including a reference to the `$schema` at the start of an `info.json` provides schema validation in both Visual Studio Code and PyCharm.
 
 ### Changes to python-pipeline
-The differences below are a comparison using git's diff tool between `main.py`
-and `sustainable_water_bodies-main.py`
+The differences below are a comparison using git's diff tool between `main.py` and `sustainable_water_bodies-main.py`
 
 ```diff
 -# DEFRA-B5-Water-bodies-achieving-sustainable-abstraction-criteria
@@ -73,8 +57,7 @@ and `sustainable_water_bodies-main.py`
 ```
 
 ### Changes to the info.json
-The differences below are made using `git diff --no-index` between `info.json`
-and `sustainable_water_bodies-info.json`.
+The differences below are made using `git diff --no-index` between `info.json` and `sustainable_water_bodies-info.json`. The main difference in `info.json` `v1.1` is that dimensions, attributes, measures, units, etc. are all explicitly declared instead of being implied based on the keys within the `column` declaration. This explitic notation allows for new functionality, like the new local codelist for `Water body category`.
 ```diff
  {
 +    "$schema": "http://gss-cogs.github.io/family-schemas/dataset-schema-1.1.0.json",
@@ -132,3 +115,6 @@ and `sustainable_water_bodies-info.json`.
     "notes": "Priority dataset for Climate Change Platform project."
 }
 ```
+
+### Differences in the output
+Using the associated `.devcontainer.json` (or the docker container `gsscogs/databaker:test`) try running both pipelines and check the output. For less code and slightly more `info.json` keys, we now have a defined catalog mentry, a local codelist (which generates both value/label pairs because the dataframe wasn't patified), and virtual columns.
