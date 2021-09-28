@@ -52,8 +52,8 @@ The differences below are a comparison using git's diff tool between `main.py` a
  # %%
 -cubes.add_cube(metadata, df, title)
 -cubes.output_all()
-+CatalogMetadata = metadata.as_csvqb_catalog_metadata()
-+CatalogMetadata.to_json_file('sustainable_water_bodies-catalog-metadata.json')
++catalog_metadata = metadata.as_csvqb_catalog_metadata()
++catalog_metadata.to_json_file('sustainable_water_bodies-catalog-metadata.json')
 ```
 
 ### Changes to the info.json

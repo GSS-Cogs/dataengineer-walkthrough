@@ -17,5 +17,5 @@ df = distribution.as_pandas(encoding='ISO-8859-1')
 df.to_csv('sustainable_water_bodies-observations.csv', index=False)
 
 # %%
-CatalogMetadata = metadata.as_csvqb_catalog_metadata()
-CatalogMetadata.to_json_file('sustainable_water_bodies-catalog-metadata.json')
+catalog_metadata = metadata.as_csvqb_catalog_metadata()
+catalog_metadata.to_json_file('sustainable_water_bodies-catalog-metadata.json')
