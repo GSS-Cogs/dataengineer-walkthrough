@@ -118,3 +118,11 @@ The differences below are made using `git diff --no-index` between `info.json` a
 
 ### Differences in the output
 Using the associated `.devcontainer.json` (or the docker container `gsscogs/databaker:test`) try running both pipelines and check the output. For less code and slightly more `info.json` keys, we now have a defined catalog entry, a local codelist (which generates both value/label pairs because the dataframe wasn't patified), and virtual columns.
+
+## Build notes
+Use the `infojson2csvqb` command to generate the csvqb, in this particular case the command is
+```bash
+infojson2csvqb build -c sustainable_water_bodies-info.json -m sustainable_water_bodies-catalog-metadata.json sustain_water_bodies-observations.csv
+```
+
+Note that in the output the contents of the dataframe are pathified automatically, saving the data engineer time and creating a codelist with both the original labels and the correct url-safe names (i.e. pathified values).
