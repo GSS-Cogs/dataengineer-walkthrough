@@ -125,4 +125,4 @@ Use the `infojson2csvqb` command to generate the csvqb, in this particular case 
 infojson2csvqb build -c sustainable_water_bodies-info.json -m sustainable_water_bodies-catalog-metadata.json sustain_water_bodies-observations.csv
 ```
 
-Note that in the output the contents of the dataframe are pathified automatically, saving the data engineer time and creating a codelist with both the original labels and the correct url-safe names (i.e. pathified values).
+Note that in the output the contents of the dataframe are pathified automatically, saving the data engineer time and creating a codelist with both the original labels and the correct uri-safe names (i.e. pathified values).
