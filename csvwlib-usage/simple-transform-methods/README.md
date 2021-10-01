@@ -122,7 +122,14 @@ Using the associated `.devcontainer.json` (or the docker container `gsscogs/data
 ## Build notes
 Use the `infojson2csvqb` command to generate the csvqb, in this particular case the command is
 ```bash
-infojson2csvqb build -c sustainable_water_bodies-info.json -m sustainable_water_bodies-catalog-metadata.json sustain_water_bodies-observations.csv
+infojson2csvqb build -c sustainable_water_bodies-info.json -m sustainable_water_bodies-catalog-metadata.json sustainable_water_bodies-observations.csv
 ```
 
 Note that in the output the contents of the dataframe are pathified automatically, saving the data engineer time and creating a codelist with both the original labels and the correct uri-safe names (i.e. pathified values).
+
+To convert the correspoding CSV-W in the `./out/` directory, the csvw2rdf docker container is used. The output in this example is Turtle. First converts the dataset
+```bash
+docker pull gsscogs/csv2rdf
+docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u b5-water-bodies-achieving-sustainable-abstraction-criteria.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//" | riot --syntax=Turtle --output=Turtle' > dataset.ttl
+docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u water-body-category.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//" | riot --syntax=Turtle --output=Turtle' > codelist.ttl
+```
