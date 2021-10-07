@@ -38,7 +38,7 @@ Briefly, for a given cube_name (use snake case).
   * Optionally: `cube_name-catalog-metadata.json`
 
 ### Multi-cube multi python files
-Multi-cube multi python files are named in a similar fashion to multi-cube single python files; however if `main.py` is present it is executed first to support the generation of common codelists.
+Multi-cube multi python files are named in a similar fashion to multi-cube single python files; however if `main.py` is present it is executed first to support the generation of common codelists. By decoupling all the cubes from one another, it means parallel execution can be implemented in the future.
 
 Briefly, for a given cube_name (use snake case).
 * Optionally: `main.py` is executed
