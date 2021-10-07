@@ -9,4 +9,4 @@ This repository serves as a series of walkthroughs to support new and existing d
 * https://github.com/GSS-Cogs/databaker-walkthrough covers how to tidy data using databaker (though much of the full transformation process comments are out of date)
 
 ## Documentation
-Right now documentation is not centralised. [Detailed documentation](https://github.com/GSS-Cogs/gss-utils/blob/d58e938aca4fb1f94230792f05b42509ec8f8a5a/gssutils/csvqbintegration/configloaders/README.md) on `info.json v1.1` is in `gss-utils`. [Naming conventions](csvwlib-usage/Naming%20Convention.md) for using `infojson2csvq` is in this repo.
+Right now documentation is not centralised. [Detailed documentation](https://github.com/GSS-Cogs/gss-utils/blob/d58e938aca4fb1f94230792f05b42509ec8f8a5a/gssutils/csvqbintegration/configloaders/README.md) on `info.json v1.1` is in `gss-utils`. [Naming conventions](csvwlib-usage/Naming%20Convention.md) for using `infojson2csvq` is in this repo. The following link to [`infojson2csvq`](https://github.com/GSS-Cogs/gss-utils/blob/csvwlib-integration/gssutils/csvqbintegration/infojson2csvqb/README.md) may need to be updated when the branch is merged into `gss-utils`.
