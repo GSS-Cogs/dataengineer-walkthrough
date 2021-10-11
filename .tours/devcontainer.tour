@@ -1,0 +1,50 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": ".devcontainer.json",
+  "steps": [
+    {
+      "file": ".devcontainer.json",
+      "description": "This is a `.devcontainer.json`, it instructs Visual Studio Code on how to spin up a Docker Container for development use.",
+      "line": 5,
+      "title": "Introduction"
+    },
+    {
+      "file": ".devcontainer.json",
+      "description": "Most development in Integrated Data Service - Dissemination we use the databaker\" docker container. It is a python 3.9 docker image which has gss-utils, and databaker integrated. There are two main flavours of this container\n\n* `:latest` tag is used by Jenkins and only contains the packages necessary to run the pipelines\n* `:dev` tag is designed to make programming pipelines easier, and contains linting, formatting, and validation utilities as well as ipynb-support\n\nThere is an additional `:test` tag right now which adds a part of our new `csvwlib` package `infojson2csvqb` which is currently in development.",
+      "line": 6,
+      "title": "Image selection"
+    },
+    {
+      "file": ".devcontainer.json",
+      "description": "These extensions help integrate Visual Studio Code with GitHub and Docker, as well as provide language support for Python.",
+      "line": 15,
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 15,
+          "character": 7
+        }
+      },
+      "title": "Extensions"
+    },
+    {
+      "file": ".devcontainer.json",
+      "description": "Docker mounts allow for access of the host's docker services within docker itself, which is necessary for using some java-based images (i.e. csvw2rdf, and csvcheck). Other mounts which grant access to your local git repo within the docker container are handled automatically by Visual Studio Code.",
+      "line": 25,
+      "selection": {
+        "start": {
+          "line": 23,
+          "character": 1
+        },
+        "end": {
+          "line": 25,
+          "character": 7
+        }
+      },
+      "title": "Bind mounts"
+    }
+  ]
+}
