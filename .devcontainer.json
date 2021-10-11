@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.183.0/containers/docker-existing-dockerfile
 {
-    "name": "Training Environment",
+    "name": "Walkthrough Environment",
     // Selects the image used for evaluation.
     "image": "gsscogs/databaker:test",
     // Set *default* container specific settings.json values on container create.
