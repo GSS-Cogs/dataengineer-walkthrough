@@ -80,8 +80,11 @@ The `info.json` uses the schema validation to suggest what we need filling in, a
 # Build command
 Docker is used to serialise the csvw into valid RDF, though we're only concerned so far with the main transformation
 ```shell
-docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u artist.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//" | riot --syntax=Turtle --output=Turtle' > artist.ttl
-docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u year.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//" | riot --syntax=Turtle --output=Turtle' > year.ttl
-docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u sweden-at-eurovision.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//" | riot --syntax=Turtle --output=Turtle' > dataset.ttl
-
+docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u artist.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//g" | riot --syntax=Turtle --output=Turtle' > artist.ttl
+docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u year.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//g" | riot --syntax=Turtle --output=Turtle' > year.ttl
+docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u sweden-at-eurovision.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//g" | riot --syntax=Turtle --output=Turtle' > dataset.ttl
 ```
+
+The above commands take Turtle and convert it into Turtle because the csv2rdf serialiser doesn't do a good job of formatting, but riot does.
+>Okay. So, ten out of ten for style, but minus several million for good thinking, huh?
+_Zaphod Beeblebrox in the Hitchhiker's Guide to the Galaxy_

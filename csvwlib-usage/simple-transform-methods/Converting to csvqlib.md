@@ -130,6 +130,6 @@ Note that in the output the contents of the dataframe are pathified automaticall
 To convert the correspoding CSV-W in the `./out/` directory, the csvw2rdf docker container is used. The output in this example is Turtle. First converts the dataset
 ```bash
 docker pull gsscogs/csv2rdf
-docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u b5-water-bodies-achieving-sustainable-abstraction-criteria.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//" | riot --syntax=Turtle --output=Turtle' > dataset.ttl
-docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u water-body-category.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//" | riot --syntax=Turtle --output=Turtle' > codelist.ttl
+docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u b5-water-bodies-achieving-sustainable-abstraction-criteria.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//g" | riot --syntax=Turtle --output=Turtle' > dataset.ttl
+docker run -it --rm -v $(pwd):/workspace -w /workspace gsscogs/csv2rdf sh -c 'csv2rdf -u water-body-category.csv-metadata.json -m annotated | sed -e "s/file\:\//http\:\/\//g" | riot --syntax=Turtle --output=Turtle' > codelist.ttl
 ```
