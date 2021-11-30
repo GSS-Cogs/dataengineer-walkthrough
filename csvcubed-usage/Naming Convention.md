@@ -1,7 +1,7 @@
 # Naming convention
-A naming convention is required for the Jenkins pipeline to handle our new `csvwlib` tooling (i.e. csvws are now generated using a command line utility).
+A naming convention is required for the Jenkins pipeline to handle our new `csvcubed` tooling (i.e. csvws are now generated using a command line utility).
 
-![A flowchart of the pipeline](.images/csvwlib_pipeline.jpg "csvwlib pipeline")
+![A flowchart of the pipeline](.images/csvcubed_pipeline.jpg "csvcubed pipeline")
 
 The generic steps of a data pipeline
 1. Download data from a defined source
@@ -11,7 +11,7 @@ The generic steps of a data pipeline
 
 The previous way `gss-utils` and Jenkins handed responsibilities for these actions was the file `main.py` was run by Jenkins and this python script provided the csvw outputs in `./out/` using the `Cubes.output_all()` method from `gss-utils`. The only mandatory file in a dataset's directory was the `main.py`. The `info.json` was not strictly required to transform a dataset yet it was required by Jenkins to check if the dataset should be published or if it is an accretive upload (neither of which are explained in this documentation).
 
-The new `infojson2csvqb` command line utility is stand alone and not executed from the python script, it will be a separate Jenkins step. [`infojson2csvq`](https://github.com/GSS-Cogs/gss-utils/blob/csvwlib-integration/gssutils/csvqbintegration/infojson2csvqb/README.md) requires `info.json` and `observations.csv` to output csvw. The `cube_name-catalog-metadata.json` files are optional, and provide details on such as the data publisher, categories, descriptions, and other provenance information.
+The new `infojson2csvqb` command line utility is stand alone and not executed from the python script, it will be a separate Jenkins step. [`infojson2csvq`](https://github.com/GSS-Cogs/gss-utils/blob/csvcubed-integration/gssutils/csvqbintegration/infojson2csvqb/README.md) requires `info.json` and `observations.csv` to output csvw. The `cube_name-catalog-metadata.json` files are optional, and provide details on such as the data publisher, categories, descriptions, and other provenance information.
 
 With these requirements, a naming convention is required to permit a procedural generation of csvqb for onwards serialisation into rdf.
 

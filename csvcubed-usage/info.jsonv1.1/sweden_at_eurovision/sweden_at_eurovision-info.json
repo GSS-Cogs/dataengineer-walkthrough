@@ -1,0 +1,42 @@
+{
+    "$schema": "http://gss-cogs.github.io/family-schemas/dataset-schema-1.1.0.json",
+    "title": "Schema at Eurovision",
+    "id": "sweden-at-eurovision",
+    "description": "",
+    "published": "2021-10-13",
+    "landingPage": "https://www.sixonstage.com/",
+    "publisher": "Six on stage",
+    "dataURL": "http://example.com/file.csv",
+    "families": ["eurovision"],
+    "transform": {
+        "airtable": "rec84324681953234",
+        "columns": {
+            "Artist": {
+                "type": "dimension"
+            },
+            "Song": {
+                "type": "attribute"
+            },
+            "Year": {
+                "type": "dimension",
+                "new": {
+                    "subPropertyOf": "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod",
+                    "codelist": false
+                },
+                "value": "https://reference.data.gov.uk/id/year/{+year}"
+            },
+            "Marker": {
+                "type": "attribute"
+            },
+            "Measure": {
+                "type": "measures"
+            },
+            "Observation": {
+                "type": "observations"
+            },
+            "Units": {
+                "type": "units"
+            }
+        }
+    }
+}

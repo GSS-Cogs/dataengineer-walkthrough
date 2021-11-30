@@ -1,0 +1,18 @@
+{
+    "title": "Schema at Eurovision",
+    "identifier": null,
+    "summary": null,
+    "description": "",
+    "creator_uri": "https://www.gov.uk/government/organisations/six-on-stage",
+    "publisher_uri": "https://www.gov.uk/government/organisations/six-on-stage",
+    "landing_page_uri": "https://www.sixonstage.com/",
+    "theme_uris": [
+        "http://gss-data.org.uk/def/gdp#eurovision"
+    ],
+    "keywords": [],
+    "dataset_issued": "2021-10-13",
+    "dataset_modified": "2021-10-15T10:19:47.168441+00:00",
+    "license_uri": null,
+    "public_contact_point_uri": null,
+    "uri_safe_identifier_override": null
+}

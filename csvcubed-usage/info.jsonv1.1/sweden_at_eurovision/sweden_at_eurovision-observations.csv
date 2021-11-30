@@ -1,0 +1,11 @@
+Artist,Song,Year,Marker,Measure,Observation,Units
+ABBA,Waterloo,1974,,People On Stage,6.0,people
+The Mamas,Move,2019,event not held,People On Stage,3.0,people
+Tusse,Voices,2021,,People On Stage,6.0,people
+John Lundvik,Too Late For Love,2019,,People On Stage,6.0,people
+Benjamin Ingrosso,Dance You Off,2018,,People On Stage,6.0,people
+ABBA,Waterloo,1974,,Rank in Grand Final,1.0,none
+The Mamas,Move,2019,event not held,Rank in Grand Final,,none
+Tusse,Voices,2021,,Rank in Grand Final,14.0,none
+John Lundvik,Too Late For Love,2019,,Rank in Grand Final,5.0,none
+Benjamin Ingrosso,Dance You Off,2018,,Rank in Grand Final,7.0,none

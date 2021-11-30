@@ -10,7 +10,7 @@
     },
     {
       "file": ".devcontainer.json",
-      "description": "Most development in Integrated Data Service - Dissemination we use the databaker\" docker container. It is a python 3.9 docker image which has gss-utils, and databaker integrated. There are two main flavours of this container\n\n* `:latest` tag is used by Jenkins and only contains the packages necessary to run the pipelines\n* `:dev` tag is designed to make programming pipelines easier, and contains linting, formatting, and validation utilities as well as ipynb-support\n\nThere is an additional `:test` tag right now which adds a part of our new `csvwlib` package `infojson2csvqb` which is currently in development.",
+      "description": "Most development in Integrated Data Service - Dissemination we use the databaker\" docker container. It is a python 3.9 docker image which has gss-utils, and databaker integrated. There are two main flavours of this container\n\n* `:latest` tag is used by Jenkins and only contains the packages necessary to run the pipelines\n* `:dev` tag is designed to make programming pipelines easier, and contains linting, formatting, and validation utilities as well as ipynb-support\n\nThere is an additional `:test` tag right now which adds a part of our new `csvcubed` package `infojson2csvqb` which is currently in development.",
       "line": 6,
       "title": "Image selection"
     },

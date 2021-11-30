@@ -1,8 +1,8 @@
-# csvwlib-flavoured transforms
-This only so far covers how to convert existing `gss-utils` transformations to new-style csvwlib transforms.
+# csvcubed-flavoured transforms
+This only so far covers how to convert existing `gss-utils` transformations to new-style csvcubed transforms.
 
 ## Example 1 - Single-measure dataset with virtual measure/units
-The `DEFRA-B5-Water-bodies-achieving-sustainable-abstraction-criteria` dataset has been converted to the new csvwlib-flavoured methods for CSV-W generation. These changes involve adopting new conventions regarding the naming of files and how to mange the transform. The generation of the csv-w exists outside of the transform python file for now.
+The `DEFRA-B5-Water-bodies-achieving-sustainable-abstraction-criteria` dataset has been converted to the new csvcubed-flavoured methods for CSV-W generation. These changes involve adopting new conventions regarding the naming of files and how to mange the transform. The generation of the csv-w exists outside of the transform python file for now.
 
 The dataset is a basic csv file comprised of a known character encoding and three columns.
 
