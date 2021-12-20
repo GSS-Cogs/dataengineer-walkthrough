@@ -83,7 +83,14 @@ catalog_metadata.to_json_file('catalog-metadata.json')
 
 **N.B. We do not currently have a schema file to help you write these JSON files.**
 
+## What is Catalog Metadata used For?
+
+Once you've defined your `catalog-metadata.json` file,  it is possible to feed it into the [infojson2csvqb build](https://github.com/GSS-Cogs/gss-utils/blob/csvwlib-integration/gssutils/csvcubedintegration/infojson2csvqb/README.md) command to generate a CSV-W holding said information.
+
+The catalog metadata is ultimately [used by PMD](https://swirrl.github.io/PMD-AP/index.html#catalog%E2%91%A0) to allow users to search through and browse all uploaded datasets.
+
 ## Further Information
 
 * [CatalogMetadata Python Definition](https://github.com/GSS-Cogs/csvwlib/blob/main/csvcubed/csvcubed/models/cube/qb/catalog.py) - Defines the fields and validations which are performed on the `catalog-metadata.json` files upon ingestion in [infojson2csvqb](https://github.com/GSS-Cogs/gss-utils/blob/csvwlib-integration/gssutils/csvcubedintegration/infojson2csvqb/README.md).
 * [CatalogMetadata API Documentation](https://ci.floop.org.uk/job/GSS_data/job/csvwlib/job/main/lastSuccessfulBuild/artifact/csvcubed/docs/_build/html/csvcubed.models.cube.qb.html#catalog-metadata-dcat) - Contains an up-to-date list of all of the properties contained on the CatalogMetadata class.
+* [PMD4 Application Profile - Catalog](https://swirrl.github.io/PMD-AP/index.html#catalog%E2%91%A0) - Describes which RDF catalog metadata triples are required and how they displayed in the UI.
