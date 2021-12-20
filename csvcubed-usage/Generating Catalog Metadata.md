@@ -22,7 +22,7 @@ catalog_metadata.to_json_file('catalog-metadata.json')
 
 ## Manually Defining Catalog Metadata
 
-Note that the below code samples show you how to download all of the relevant catalog metadata fields. It is not necessary to define all of these fields. Strictly speaking, defining the `title` is the only definition which is **required**.
+Note that the below code samples show you how to define all of the relevant catalog metadata fields. It is not necessary to define all of these fields. Strictly speaking, defining the `title` is the only definition which is **required**.
 
 ### In Python
 
